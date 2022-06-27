@@ -7,6 +7,7 @@ import 'react-time-picker/dist/TimePicker.css';
 import "./calendar.css";
 import { SchedularPost } from "../../Redux/Actions/SchedulaAction"
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 const customStyles = {
   content: {
     top: '50%',
@@ -54,22 +55,26 @@ export default function CalendarPage() {
   }
 
   const Submit = () => {
-    let data = {
-      title: title,
-      description: description,
-      start_time: time,
-      end_time: endtime,
-      date: datess
-
-
+    if(title !== "" && description !== ""){
+      let data = {
+        title: title,
+        description: description,
+        start_time: time,
+        end_time: endtime,
+        date: datess
+  
+  
+      }
+      dispatch(SchedularPost(data))
+      setIsOpen(false);
+      setTitle("")
+      setDescription("")
+      setTime(dates)
+      setEndTime(dates)
+      setDate(new Date())
+    }else{
+      toast.error("Please enter title or description")
     }
-    dispatch(SchedularPost(data))
-    setIsOpen(false);
-    setTitle("")
-    setDescription("")
-    setTime(dates)
-    setEndTime(dates)
-    setDate(new Date())
   }
 
   const closeModal = () => {

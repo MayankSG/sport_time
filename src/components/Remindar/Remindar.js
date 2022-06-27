@@ -18,6 +18,7 @@ const customStyles = {
 };
 
 export default function Remindar() {
+    let dates = `${new Date().getHours()}:${new Date().getMinutes()}`
     const [modalIsOpen, setIsOpen] = useState(false);
     const [remdata, setRemData] = useState([
         {
@@ -29,7 +30,7 @@ export default function Remindar() {
             title: "Team Meating"
         }
     ])
-    const [time, setTime] = useState(new Date());
+    const [time, setTime] = useState(dates);
     const [title, setTitle] = useState("")
     const dispatch = useDispatch()
     const remiderdata = useSelector(state => state?.reminderdata?.data)
@@ -47,16 +48,22 @@ export default function Remindar() {
     }
 
     const handleSubmit = () => {
-        let data = {
-            rem_time: time,
-            title: title
+        if( title !== ""){
+            let data = {
+                rem_time: time,
+                title: title
+            }
+            dispatch(ReminderPost(data))
+            setIsOpen(false);
+            setTitle("")
+            setTime(dates)
+    
+            toast.success("Your reminder saved successfully!")
+        }else{
+            toast.error("Please enter title")
         }
-        dispatch(ReminderPost(data))
-        setIsOpen(false);
-        setTitle("")
-        setTime(new Date())
 
-        toast.success("Your reminder saved successfully!")
+        
     }
 
     function openModal(time) {
@@ -75,7 +82,7 @@ export default function Remindar() {
                         <div>
                             <h3>Reminder</h3>
                         </div>
-                        <div className='scroll-hg' style={{ height: 100 }}>
+                        <div className='scroll-hg' style={{ height: 114 }}>
                             {
                                 remdata && remdata?.reverse().map((data, index) => {
                                     return (

@@ -7,19 +7,24 @@ export default function CreateEvent() {
     const [title, setTitle] = useState("")
 
     const handleSubmit = () => {
-        setIsOpen(false);
-        setTitle("")
-        toast.success("Your event saved successfully!")
+        if (title !== "") {
+            setIsOpen(false);
+            setTitle("")
+            toast.success("Your event saved successfully!")
+        }else{
+            toast.error("Please enter title")
+        }
+
     }
 
     function openModal(time) {
         setIsOpen(true)
     }
-    
+
     function closeModal() {
         setIsOpen(false);
     }
-    
+
     const customStyles = {
         content: {
             top: '50%',

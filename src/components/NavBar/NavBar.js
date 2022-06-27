@@ -14,7 +14,7 @@ export default function NavBar() {
                         <input className="pl-md" type="search" placeholder="Search" />
                     </div>
                     <div
-                        className="sp-flex sp-items-center sp-justify-end cursor-pointer my-10"
+                        className="sp-flex sp-items-center sp-justify-end cursor-pointer my-10 user-profile"
                     >
                         <div className="sp-text-right mx-15">
                             <h3 className="m-none">Eleanor Pena</h3>

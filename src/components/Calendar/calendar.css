@@ -43,6 +43,7 @@
 }
 .react-calendar__month-view__weekdays {
     color: #fff;
+    font-size: 0.65em !important;
 }
 .react-calendar__month-view__weekdays abbr {
     text-decoration: unset;
