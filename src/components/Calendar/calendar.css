@@ -1,0 +1,54 @@
+.react-time-picker {
+    color: white;
+}	
+
+.react-time-picker__inputGroup__input {
+    color: white !important;
+    background-color: black;
+}
+
+.savebuttton {
+    border: 1px solid greenyellow !important;
+    background-color: grey !important;
+    width: 60px;
+    height: 35px;
+    border-radius: 10px;
+    align-self: flex-end;
+
+}
+.react-calendar {
+    background-color: transparent;
+    border: none;
+}
+.react-calendar__tile {
+    color: #fff;
+    padding: 0;
+    height: 28px;
+    width: 28px;
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: #757575;
+}
+.react-calendar__tile--active,
+.react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus,
+.react-calendar__tile:enabled:hover, .react-calendar__tile:enabled:focus {
+    background-color: #378f8b;
+    border-radius: 50%;
+}
+.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+    background-color: transparent;
+}
+.react-calendar__navigation button span {
+    color: #fff;
+}
+.react-calendar__month-view__weekdays {
+    color: #fff;
+}
+.react-calendar__month-view__weekdays abbr {
+    text-decoration: unset;
+}
+.react-calendar__navigation__prev-button,
+.react-calendar__navigation__next-button {
+    filter: invert(1);
+    font-size: 30px;
+}

@@ -1,0 +1,2 @@
+export const POST_SCHEDULAR = "POST_SCHEDULAR";
+export const POST_REMINDER = "POST_REMINDER"
